@@ -7,6 +7,21 @@ void main() {
   runApp(MyApp());
 }
 
+enum Routes { locationDetail, grayScale }
+
+extension RouteExtension on Routes {
+  String get value {
+    switch (this) {
+      case Routes.locationDetail:
+        return "/location-detail";
+      case Routes.grayScale:
+        return "/gray-scale";
+      default:
+        return null;
+    }
+  }
+}
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -18,8 +33,8 @@ class MyApp extends StatelessWidget {
       ),
       home: HomeScreen(),
       routes: {
-        '/location-detail': (context) => LocationDetail(),
-        '/gray-scale': (context) => GrayScale(),
+        Routes.locationDetail.value: (context) => LocationDetail(),
+        Routes.grayScale.value: (context) => GrayScale(),
       },
     );
   }
@@ -43,20 +58,15 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.red,
                 text: "Location",
                 textColor: Colors.white,
-                onPressEvent: () => {
-                  print("Location Button Clicked!")
-                }),
+                onPressEvent: () => Navigator.pushNamed(context, Routes.locationDetail.value)),
             MyButton(
                 color: Colors.blue,
                 text: "Gray Scale",
                 textColor: Colors.white,
-                onPressEvent: () => {
-                  print("Gray Scale Button Clicked!")
-                })
+                onPressEvent: () => Navigator.pushNamed(context, Routes.grayScale.value) )
           ],
         ),
       ),
     );
   }
 }
-
