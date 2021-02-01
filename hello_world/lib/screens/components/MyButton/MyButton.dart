@@ -18,7 +18,7 @@ class MyButton extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(5),
       child: RaisedButton(
-          onPressed: this.onPressEvent(),
+          onPressed: this.onPressEvent,
           textColor: this.textColor,
           color: this.color,
           child: Text(this.text)),
