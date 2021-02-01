@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 
 class TextSection extends StatelessWidget {
-  Color _color;
-  String _text;
+  final Color color;
+  final String text;
 
-  TextSection(Color color, [String text = "Hello World"]){
-    this._color = color;
-    this._text = text;
-  }
+  TextSection(this.color, [this.text = "Hello World"]);
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +12,9 @@ class TextSection extends StatelessWidget {
       child: Container(
           margin: EdgeInsets.all(5),
           padding: EdgeInsets.all(10),
-          decoration: BoxDecoration(color: this._color),
+          decoration: BoxDecoration(color: this.color),
           child: Text(
-            this._text,
+            this.text,
             style: TextStyle(color: Colors.white),
           )),
     );

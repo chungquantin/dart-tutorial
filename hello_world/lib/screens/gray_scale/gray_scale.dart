@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hello_world/screens/location_detail/text_section.dart';
 
 class GrayScale extends StatelessWidget {
-  GrayScale({Key key}) : super(key: key);
   List<TextSection> generateSection() {
     List<TextSection> textSections = [];
     for (var i = 0; i < 50; i++) {
