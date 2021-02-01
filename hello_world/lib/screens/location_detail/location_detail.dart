@@ -3,15 +3,6 @@ import 'package:hello_world/screens/location_detail/text_section.dart';
 
 class LocationDetail extends StatelessWidget {
   LocationDetail({Key key}) : super(key: key);
-  List<TextSection> generateSection() {
-    List<TextSection> textSections = [];
-    for (var i = 0; i < 50; i++) {
-      dynamic color = Color.fromRGBO(10 * i, 10 * i, 10 * i, 1);
-      textSections.add(
-          TextSection(color, "$color"));
-    }
-    return textSections;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +14,11 @@ class LocationDetail extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: this.generateSection(),
+          children: [
+            TextSection(Colors.red, "Child 1"),
+            TextSection(Colors.blue, "Child 2"),
+            TextSection(Colors.green, "Child 3"),
+          ],
         ),
       ),
     );
