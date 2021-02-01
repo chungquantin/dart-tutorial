@@ -32,6 +32,19 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.green,
+        appBarTheme: AppBarTheme(
+          textTheme: TextTheme(
+            headline6: TextStyle(
+              fontSize: 25
+            ),
+          )
+        ),
+        textTheme: TextTheme(
+          bodyText2: TextStyle(
+            fontSize: 20,
+            fontFamily: "Montserrat"
+          )
+        )
       ),
       home: HomeScreen(),
       routes: {

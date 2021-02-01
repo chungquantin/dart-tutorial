@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/screens/components/ImageBanner/ImageBanner.dart';
+import 'package:hello_world/screens/components/MyButton/MyButton.dart';
 import 'package:hello_world/screens/location_detail/text_section.dart';
 
 class LocationDetail extends StatelessWidget {
@@ -13,12 +14,35 @@ class LocationDetail extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            ImageBanner(image: NetworkImage("https://images.unsplash.com/photo-1612138561512-50c8260a6ed8?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60")),
-            ImageBanner(image: AssetImage("assets/images/open.jpg")),
-            TextSection(Colors.red, "Child 1"),
-            TextSection(Colors.blue, "Child 2"),
-            TextSection(Colors.green, "Child 3"),
+          children: <Widget>[
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                ImageBanner(image: AssetImage("assets/images/kameron.jpg")),
+                Center(
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        "Vietnam",
+                        style: TextStyle(
+                            fontFamily: 'AirbnbCerealBold',
+                            fontSize: 50,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                      Text(
+                        "1,243 Place",
+                        style: TextStyle(
+                            fontFamily: 'AirbnbCerealBook',
+                            fontSize: 24,
+                            color: Colors.white),
+                      ),
+                    ],
+                  ),
+            ),
+              ],
+            ),
+            TextSection(Colors.white, "Modi quae similique. Quo qui quo impedit. Ab cupiditate tempora nobis omnis tempora aut. Vel sit pariatur impedit est.", "Dolorem vitae et cumque vel labore maiores qui.")
           ],
         ),
       ),

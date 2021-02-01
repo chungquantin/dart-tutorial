@@ -7,7 +7,7 @@ class GrayScale extends StatelessWidget {
     for (var i = 0; i < 50; i++) {
       dynamic color = Color.fromRGBO(10 * i, 10 * i, 10 * i, 1);
       textSections.add(
-          TextSection(color, "$color"));
+          TextSection(color, "", "$color"));
     }
     return textSections;
   }
