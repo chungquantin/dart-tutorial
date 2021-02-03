@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/main.dart';
 import 'package:hello_world/screens/components/ImageBanner/ImageBanner.dart';
 import 'package:hello_world/screens/components/MyButton/MyButton.dart';
 import 'package:hello_world/screens/location_detail/text_section.dart';
+import 'package:provider/provider.dart';
 
 class LocationDetail extends StatelessWidget {
   @override
@@ -37,12 +39,22 @@ class LocationDetail extends StatelessWidget {
                             fontSize: 24,
                             color: Colors.white),
                       ),
+                      RaisedButton(
+                          color: Colors.black,
+                          textColor: Colors.white,
+                          child: Text("Click"),
+                          onPressed: () =>
+                              Provider.of<CounterModel>(context, listen: false)
+                                  .increase())
                     ],
                   ),
-            ),
+                ),
               ],
             ),
-            TextSection(Colors.white, "Modi quae similique. Quo qui quo impedit. Ab cupiditate tempora nobis omnis tempora aut. Vel sit pariatur impedit est.", "Dolorem vitae et cumque vel labore maiores qui.")
+            TextSection(
+                Colors.white,
+                "Modi quae similique. Quo qui quo impedit. Ab cupiditate tempora nobis omnis tempora aut. Vel sit pariatur impedit est.",
+                "Dolorem vitae et cumque vel labore maiores qui.")
           ],
         ),
       ),
